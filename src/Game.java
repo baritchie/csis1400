@@ -26,6 +26,7 @@ public class Game {
             System.out.println("Please type the character class you’d like to play: ");
             chosenClass = scnr.nextLine();
         }
+        System.out.println("You chose " + chosenClass + "! A fine choice!");
         Character theChar = new Character();
         switch (chosenClass) {
             case "Archer":
