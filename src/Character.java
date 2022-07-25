@@ -36,7 +36,7 @@ public class Character {
     public int removeFromInventory() {
         System.out.println("Please choose an item to replace in your inventory:");
         for (int i = 0; i < inventory.length; ++i) {
-            System.out.println(i + inventory[i]);
+            System.out.println(i + " - " + inventory[i]);
         }
         return scnr.nextInt();
     }
