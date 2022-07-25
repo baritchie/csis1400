@@ -1,5 +1,5 @@
 public class Fighter extends Character {
-    public int slash() {
+    public int attack() {
         int min = 1;
         int max = 10;
         return (int) (Math.random() * (max - min)) + min;

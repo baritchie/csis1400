@@ -1,5 +1,5 @@
 public class Mage extends Character {
-    public int cast() {
+    public int attack() {
         int min = 1;
         int max = 10;
         return (int) (Math.random() * (max - min)) + min;
