@@ -1,3 +1,9 @@
+/*
+Project: Text-Adventure Game
+Authors: Marta Osuna-Gallardo, Benjamin Rojas-Ritchie, and Zachary Royer
+Description: Text-Adventure Game
+Course: CSIS-1400
+*/
 import java.util.Arrays;
 import java.util.Scanner;
 

@@ -1,3 +1,10 @@
+/*
+Project: Text Game - Character Class
+Name: Benjamin Rojas-Ritchie
+Email: brojasri@bruinmail.slcc.edu
+Description: Main character class
+Course: CSIS-1400
+*/
 import java.util.Scanner;
 
 public class Character {

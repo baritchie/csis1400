@@ -1,3 +1,10 @@
+/*
+Project: Text Game - Archer Subclass of Character
+Name: Benjamin Rojas-Ritchie
+Email: brojasri@bruinmail.slcc.edu
+Description: Subclass of Character for the Archer character type
+Course: CSIS-1400
+*/
 public class Archer extends Character {
     public int attack() {
         int min = 1;
