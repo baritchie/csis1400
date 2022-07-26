@@ -13,6 +13,7 @@ class Encounters {
     public int encounterFullDamage;
     public int coinsOnDeath;
 
+    //Encounters constructor
     Encounters(String encounterName, int encounterLightDamage, int encounterFullDamage, int coinsOnDeath) {
         this.encounterName = encounterName;
         this.encounterLightDamage = encounterLightDamage;
@@ -20,6 +21,7 @@ class Encounters {
         this.coinsOnDeath = coinsOnDeath;
     }
 
+    // Method creates an Object array detailing encounter information
     public Encounters[] setEncounters() {
         Encounters[] encounter = new Encounters[5];
         encounter[0] = new Encounters("Goblins", 3, 8, 10);
@@ -30,6 +32,7 @@ class Encounters {
         return encounter;
     }
 
+    // Main method, will compare character class from Game.java through different enemy encounters.
     public void currEncounter(int num) {
         Encounters[] encounter = setEncounters();
         Scanner scnr = new Scanner(System.in);
