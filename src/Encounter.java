@@ -13,20 +13,21 @@ class Encounters {
     public int encounterFullDamage;
     public int coinsOnDeath;
 
-    public void Encounter(String encounterName, int encounterLightDamage, int encounterFullDamage, int coinsOnDeath) {
+    Encounters(String encounterName, int encounterLightDamage, int encounterFullDamage, int coinsOnDeath) {
         this.encounterName = encounterName;
         this.encounterLightDamage = encounterLightDamage;
         this.encounterFullDamage = encounterFullDamage;
         this.coinsOnDeath = coinsOnDeath;
     }
 
-    Encounters[] encounter = new Encounters[5];
-    encounter[0] = new Encounter("Goblins", 3, 8, 10),
-    encounter[1] = new Encounter("a Lich", 5, 10, 15),
-    encounter[0] = new Encounter("a band of Knight", 5, 9, 17),
-    encounter[0] = new Encounter("a group of the Undead", 2, 6, 10),
-    encounter[0] = new Encounter("the Leshy", 8, 15, 25);
-
+    public static void main(String[] args) {
+        Encounters[] encounter = new Encounters[5];
+        encounter[0] = new Encounters("Goblins", 3, 8, 10);
+        encounter[1] = new Encounters("a Lich", 5, 10, 15);
+        encounter[2] = new Encounters("a band of Knight", 5, 9, 17);
+        encounter[3] = new Encounters("a group of the Undead", 2, 6, 10);
+        encounter[4] = new Encounters("the Leshy", 8, 15, 25);
+    }
     public void currEncounter(int num) {
 
         Scanner scnr = new Scanner(System.in);
