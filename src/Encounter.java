@@ -8,8 +8,26 @@ import java.util.Scanner;
 
 // Takes num corresponding to desired encounter
 class Encounters {
+    public String encounterName;
+    public int encounterLightDamage;
+    public int encounterFullDamage;
+    public int coinsOnDeath;
 
-    public void Encounter(int num) {
+    public void Encounter(String encounterName, int encounterLightDamage, int encounterFullDamage, int coinsOnDeath) {
+        this.encounterName = encounterName;
+        this.encounterLightDamage = encounterLightDamage;
+        this.encounterFullDamage = encounterFullDamage;
+        this.coinsOnDeath = coinsOnDeath;
+    }
+
+    Encounters[] encounter = new Encounters[5];
+    encounter[0] = new Encounter("Goblins", 3, 8, 10),
+    encounter[1] = new Encounter("a Lich", 5, 10, 15),
+    encounter[0] = new Encounter("a band of Knight", 5, 9, 17),
+    encounter[0] = new Encounter("a group of the Undead", 2, 6, 10),
+    encounter[0] = new Encounter("the Leshy", 8, 15, 25);
+
+    public void currEncounter(int num) {
 
         Scanner scnr = new Scanner(System.in);
         String[] encounterName = new String[] { "Goblins", "a Lich", "A Band of Knights", "the Undead" }; // An Array containing encounter names
