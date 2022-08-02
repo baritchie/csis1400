@@ -37,7 +37,7 @@ public class Castle {
     }
 
     public void startHere() {
-        System.out.println("You are arrive at the castle");
+        System.out.println("You arrive at the castle");
 
         Encounters encounter = new Encounters();
         encounter.setCurrentEncounter(getEncounterNumber());
@@ -68,7 +68,7 @@ public class Castle {
                     castleEndsession = true;
                     break;
                 default:
-                    System.out.println("Umm, hello?");
+                    System.out.println("Umm, let's try that again: fight or retreat?");
                     userInputCastle = castleScnr.nextLine();
                     break;
             }
@@ -92,9 +92,9 @@ public class Castle {
             switch (turnChecker) {
                 case "Player":
                     System.out.println();
-                    System.out.println("before attack: " + encounter.getEncounterHealthPoints());
+                   // System.out.println("before attack: " + encounter.getEncounterHealthPoints());
 
-                    System.out.println();
+                    //System.out.println();
 
                     if (characterStats.weapon == "") {
                         System.out.println(
@@ -117,7 +117,7 @@ public class Castle {
                     }
                     System.out.println();
 
-                    System.out.println("after attack: " + encounter.getEncounterHealthPoints());
+                    //System.out.println("after attack: " + encounter.getEncounterHealthPoints());
 
                     System.out.println();
                     turnChecker = "Monster";
@@ -151,12 +151,12 @@ public class Castle {
                         System.out.println("You get hit and take " + damageCalc + "!!!");
                         characterStats.takeDamage(damageCalc);
                     } else {
-                        System.out.println("Look at you dodgin that attack. Good for you!");
+                        System.out.println("Look at you dodging that attack. Good for you!");
                     }
                     turnChecker = "Player";
                     turnCount++;
                     if (characterStats.characterHealth <= 0) {
-                        System.out.println("WASTED...");
+                        System.out.println("The monsters trample over your lifeless body as they invade further into Castle Rush. Shame that you couldn't stop them.");
                         turnChecker = "FightOver";
                         break;
                     }
