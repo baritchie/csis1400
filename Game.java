@@ -23,7 +23,7 @@ public class Game {
 
         // GAME START
 
-        System.out.println("Welcome to [GAME TITLE]! Please enter the your name:");
+        System.out.println("Welcome to Castle Rush! Please enter the your name:");
         name = scnr.nextLine();
         System.out.println("Hi " + name + "! Ready for the adventure? Please pick your character class.");
         System.out.println("Your options are:");
@@ -73,8 +73,9 @@ public class Game {
         // Object of the game is to defeat all the monsters in the encounters class.
         // Total of 5 fights.
 
-        System.out.println(
-                "Choices are Barracks or Castle. You can also surrender and your legacy will be that of a coward.");
+        System.out.println("You're a soldier of Castle Rush, and there are monsters invading!");
+        System.out.println("You can go to the Barracks to arm and equip yourself, or go straight to the battle at the Castle.");
+        System.out.println("You can also surrender and your legacy will be that of a coward.");
 
         userInput = scnr.nextLine();
 
@@ -91,11 +92,11 @@ public class Game {
                         theChar.checkEquipment();
                         System.out.println();
                         System.out.println(
-                                "You return from the barracks with your shiny new equipment and face the same fork. Where do you go? Castle or return to the barracks? ");
+                                "You return from the barracks with your shiny new equipment and face the same decision. Where do you go? Castle or return to the barracks? ");
                     } else {
                         System.out.println();
                         System.out.println(
-                                "You wasted your time at the barracks and face the same fork. Where do you go? Castle or return to the barracks? ");
+                                "You wasted your time at the barracks and face the same decision. Where do you go? Castle or return to the barracks? ");
                     }
 
                     userInput = scnr.nextLine();
@@ -114,17 +115,17 @@ public class Game {
                         System.out.println();
                         encounterNumber = castlePath.getEncounterNumber();
                         System.out.println(
-                                "You return from the castle and face the same fork. Where do you go? The Barracks or return to the Castle? ");
+                                "You return from the castle and face the same decision. Where do you go? The Barracks or return to the Castle? ");
                         userInput = scnr.nextLine();
                     }
                     break;
                 case "SURRENDER":
-                    System.out.println("Farewell coward");
+                    System.out.println("Castle Rush falls to the monsterous army and its citizens suffer due to your cowardice.");
                     gameEnd = true;
                     break;
                 default:
                     System.out.println(
-                            "As you stand here indecisive the army in the castle gets stronger. So? Barracks, castle, or surrender?");
+                            "As you stand here, indecisive, the army in the castle gets stronger. So? Barracks, castle, or surrender?");
                     userInput = scnr.nextLine();
                     break;
             }
