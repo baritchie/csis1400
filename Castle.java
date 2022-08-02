@@ -1,3 +1,11 @@
+/*
+Project: Text Game - Castle Class
+Name: Marta Osuna-Gallardo
+Email: mosunaga@bruinmail.slcc.edu
+Description: Castle Story Class
+Course: CSIS-1400
+*/
+
 import java.util.Scanner;
 
 public class Castle {
