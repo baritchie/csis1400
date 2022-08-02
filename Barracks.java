@@ -40,34 +40,38 @@ public class Barracks {
     }
 
     public void startHere(String primaryWeapon, String secondaryWeapon, String armor, String characterClass) {
-        System.out.println("You arrive at the barracks and enter the armory. You are greeted by the master at arms.");
+        System.out.println("You arrive at the barracks and enter the armory. You are greeted by the Master-At-Arms.");
         System.out.println();
         if (primaryWeapon == "" || secondaryWeapon == "" || armor == "") {
-            System.out.println("Soldier! How will you fare against the armies of evil without the proper equipment? ");
+            System.out.println(" He looks at you, unimpressed and shouts: 'Soldier! How will you fare against the armies of evil without the proper equipment?' ");
         } else {
             System.out.println(
-                    "Hello soldier. You appear to have all your equipment. Would you like to change anything? ");
+                    "He looks at you and nods, 'Hello soldier. You appear to have all your equipment. Would you like to change anything?' ");
         }
 
         do {
             switch (userBarracksInput.toUpperCase()) {
                 case "CHANGE EQUIPMENT":
-                    System.out.println("Sir, I would like to adjust my equipment");
+                    System.out.println("You respond to the Master-At-Arms:); 
+                    System.out.println('Sir, I would like to adjust my equipment.'");
+                    System.out.println();
+                                       
                     setEquipmentItems(characterClass);
 
                     System.out.println("The master at arms looks you up and down and says");
-                    System.out.println("'Look at my little boy all grown up! Go gettum tiger!'");
+                    System.out.println("'You're ready for battle. Go slay some monsters for me!'");
                     System.out.println();
-                    System.out.println("You depart the barracks and make your way back to the fork");
+                    System.out.println("You depart the barracks and make your way back to the road between the Barracks and Castle.");
                     returnFromBarracks = true;
                     inventorySet = true;
                     break;
                 case "LEAVE":
-                    System.out.println("Sir, I have made a mistake. Sorry for wasting your time. ");
+                    System.out.println("You respond to the Master-At-Arms:); 
+                    System.out.println("'Sir, I have made a mistake. Sorry for wasting your time.' ");
                     returnFromBarracks = true;
                     break;
                 default:
-                    System.out.println("Soldier, stop wasting my time. What do you need? ");
+                    System.out.println("'Soldier, stop wasting my time. What do you need?' ");
                     System.out.println("How do you respond to the master at arms? ");
                     System.out.println();
                     System.out.println("Change Equipment or Leave");
@@ -132,22 +136,23 @@ public class Barracks {
         do {
             switch (userBarracksInput) {
                 case "1":
-                    System.out.println("I chooseth " + options[0]);
+                    System.out.println("I choose " + options[0]);
                     setPrimaryWeaponSelection(options[0]);
                     primaryWeaponSelected = true;
                     break;
                 case "2":
-                    System.out.println("I chooseth " + options[1]);
+                    System.out.println("I choose " + options[1]);
                     setPrimaryWeaponSelection(options[1]);
                     primaryWeaponSelected = true;
                     break;
                 case "3":
-                    System.out.println("I chooseth " + options[2]);
+                    System.out.println("I choose " + options[2]);
                     setPrimaryWeaponSelection(options[2]);
                     primaryWeaponSelected = true;
                     break;
                 default:
-                    System.out.println("Has all that mead gone to your head? I will make it easy for you 1, 2 or 3?");
+                    System.out.println("The Master-At-Arms rolls his eyes.");
+                    System.out.println("'Has all that mead gone to your head? I'll make it easy for you 1, 2 or 3?'");
                     System.out.println();
                     System.out.println("-------------------");
                     System.out.println("1 - " + options[0]);
@@ -169,7 +174,7 @@ public class Barracks {
     public void selectSecondaryWeapon(String options[]) {
         boolean secondaryWeaponSelected = false;
 
-        System.out.println("What will your secondary weapon be?");
+        System.out.println("'What will your secondary weapon be?'");
         System.out.println("Options: ");
         System.out.println("-------------------");
         System.out.println("1 - " + options[0]);
@@ -180,22 +185,23 @@ public class Barracks {
         do {
             switch (userBarracksInput) {
                 case "1":
-                    System.out.println("I chooseth " + options[0]);
+                    System.out.println("I choose " + options[0]);
                     setSecondaryWeaponSelection(options[0]);
                     secondaryWeaponSelected = true;
                     break;
                 case "2":
-                    System.out.println("I chooseth " + options[1]);
+                    System.out.println("I choose " + options[1]);
                     setSecondaryWeaponSelection(options[1]);
                     secondaryWeaponSelected = true;
                     break;
                 case "3":
-                    System.out.println("I chooseth " + options[2]);
+                    System.out.println("I choose " + options[2]);
                     setSecondaryWeaponSelection(options[2]);
                     secondaryWeaponSelected = true;
                     break;
                 default:
-                    System.out.println("Has all that mead gone to your head? I will make it easy for you 1, 2 or 3?");
+                    System.out.println("The Master-At-Arms rolls his eyes.");
+                    System.out.println("'Has all that mead gone to your head? I'll make it easy for you 1, 2 or 3?'");
                     System.out.println();
                     System.out.println("Options: ");
                     System.out.println("-------------------");
@@ -218,7 +224,7 @@ public class Barracks {
     public void selectArmor(String options[]) {
         boolean armorSelected = false;
 
-        System.out.println("What will your armor choice be?");
+        System.out.println("'What will your armor choice be?'");
         System.out.println("Options: ");
         System.out.println("-------------------");
         System.out.println("1 - " + options[0]);
@@ -244,7 +250,8 @@ public class Barracks {
                     armorSelected = true;
                     break;
                 default:
-                    System.out.println("Has all that mead gone to your head? I will make it easy for you 1, 2 or 3?");
+                    System.out.println("The Master-At-Arms rolls his eyes.");
+                    System.out.println("'Has all that mead gone to your head? I'll make it easy for you 1, 2 or 3?'");
                     System.out.println();
                     System.out.println("Options: ");
                     System.out.println("-------------------");
