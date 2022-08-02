@@ -60,8 +60,8 @@ public class Barracks {
         do {
             switch (userBarracksInput.toUpperCase()) {
                 case "CHANGE EQUIPMENT":
-                    System.out.println("You respond to the Master-At-Arms:); 
-                    System.out.println('Sir, I would like to adjust my equipment.'");
+                    System.out.println("You respond to the Master-At-Arms:"); 
+                    System.out.println("'Sir, I would like to adjust my equipment.'");
                     System.out.println();
                                        
                     setEquipmentItems(characterClass);
