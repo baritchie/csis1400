@@ -74,7 +74,7 @@ public class Barracks {
                     inventorySet = true;
                     break;
                 case "LEAVE":
-                    System.out.println("You respond to the Master-At-Arms:); 
+                    System.out.println("You respond to the Master-At-Arms:"); 
                     System.out.println("'Sir, I have made a mistake. Sorry for wasting your time.' ");
                     returnFromBarracks = true;
                     break;

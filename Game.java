@@ -30,7 +30,7 @@ public class Game {
         for (String s : classes) {
             System.out.println(s);
         }
-        System.out.println("Please type the character class you’d like to play: ");
+        System.out.println("Please type the character class you`d like to play: ");
         chosenClass = scnr.nextLine();
         while (!Arrays.asList(classes).contains(chosenClass)) {
             System.out.println("That is not a valid class.");
@@ -38,7 +38,7 @@ public class Game {
             for (String s : classes) {
                 System.out.println(s);
             }
-            System.out.println("Please type the character class you’d like to play: ");
+            System.out.println("Please type the character class you`d like to play: ");
             chosenClass = scnr.nextLine();
         }
         System.out.println("You chose " + chosenClass + "! A fine choice!");
@@ -92,11 +92,11 @@ public class Game {
                         theChar.checkEquipment();
                         System.out.println();
                         System.out.println(
-                                "You return from the barracks with your shiny new equipment and face the same decision. Where do you go? Castle or return to the barracks? ");
+                                "You return from the barracks with your shiny new equipment and face the same decision. Where do you go? Castle, rest, or return to the barracks? ");
                     } else {
                         System.out.println();
                         System.out.println(
-                                "You wasted your time at the barracks and face the same decision. Where do you go? Castle or return to the barracks? ");
+                                "You wasted your time at the barracks and face the same decision. Where do you go? Castle, rest, or return to the barracks? ");
                     }
 
                     userInput = scnr.nextLine();
@@ -107,17 +107,30 @@ public class Game {
                     Castle castlePath = new Castle();
                     encounterNumber = castlePath.getEncounterNumber();
                     // This starts path for castle
-                    castlePath.startHere();
-                    if (theChar.characterHealth <= 0) {
+                    System.out.println("Testing encounter#: " + encounterNumber);
+                    castlePath.startHere(theChar, encounterNumber);
+                    if (theChar.getCharacterHealth() <= 0) {
                         System.out.println("Game Over");
                         gameEnd = true;
+                        break;
                     } else {
                         System.out.println();
-                        encounterNumber = castlePath.getEncounterNumber();
-                        System.out.println(
-                                "You return from the castle and face the same decision. Where do you go? The Barracks or return to the Castle? ");
-                        userInput = scnr.nextLine();
+                        if(castlePath.getCastleComplete()){
+                            System.out.println("You stand over the dead monsters and declare victory. Castle Rush is safe thanks to you!");
+                            gameEnd = true;
+                        }else{
+                            encounterNumber = castlePath.getEncounterNumber();
+                            System.out.println(
+                                    "You return from the castle. Where do you go? The Barracks, to Rest, or return to the Castle? ");
+                            userInput = scnr.nextLine();
+                        }
                     }
+                    break;
+                case "REST":
+                    System.out.println("You take a moment to rest in a safe location, and your health is restored.");
+                    theChar.fullHeal();
+                    System.out.println("Where do you go from here? Back to the battle at the castle, or back to the barracks?");
+                    userInput = scnr.nextLine();
                     break;
                 case "SURRENDER":
                     System.out.println("Castle Rush falls to the monsterous army and its citizens suffer due to your cowardice.");
@@ -125,7 +138,7 @@ public class Game {
                     break;
                 default:
                     System.out.println(
-                            "As you stand here, indecisive, the army in the castle gets stronger. So? Barracks, castle, or surrender?");
+                            "As you stand here, indecisive, the army in the castle gets stronger. So? Barracks, castle, rest, or surrender?");
                     userInput = scnr.nextLine();
                     break;
             }

@@ -10,7 +10,8 @@ import java.util.Scanner;
 
 public class Character {
     String characterName = "";
-    int characterHealth = 50;
+    private int characterHealth = 50;
+    int startingCharacterHealth = 50;
     String weapon = "";
     String secWeapon = "";
     int special;
@@ -18,16 +19,24 @@ public class Character {
     String[] inventory = new String[9];
     Scanner scnr = new Scanner(System.in);
 
-    public int takeDamage(int damage) {
-        return characterHealth - damage;
+    public void setCharacterHealth(int characterHealth) {
+        this.characterHealth = characterHealth;
+    }
+
+    public int getCharacterHealth() {
+        return characterHealth;
+    }
+
+    public void takeDamage(int damage) {
+        setCharacterHealth(getCharacterHealth() - damage);
     }
 
     public String inputName(String name) {
         return characterName = name;
     }
 
-    public int heal(int hitPoints) {
-        return characterHealth + hitPoints;
+    public void fullHeal() {
+        setCharacterHealth(startingCharacterHealth);
     }
 
     public void checkEquipment() {

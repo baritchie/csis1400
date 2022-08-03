@@ -4,7 +4,6 @@
 // Course: CSIS-1400
 
 import java.util.Random;
-import java.util.Arrays;
 
 // Takes num corresponding to desired encounter
 public class Encounters {
