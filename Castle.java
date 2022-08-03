@@ -1,3 +1,11 @@
+/*
+Project: Text Game - Castle Class
+Name: Marta Osuna-Gallardo
+Email: mosunaga@bruinmail.slcc.edu
+Description: Castle Story Class
+Course: CSIS-1400
+*/
+
 import java.util.Scanner;
 
 public class Castle {
@@ -22,6 +30,7 @@ public class Castle {
     public int getEncounterNumber() {
         return encounterNumber;
     }
+    
     public boolean getCastleComplete() {
         return castleComplete;
     }
@@ -38,6 +47,7 @@ public class Castle {
     public void setEncounterNumber(int newNumber) {
         this.encounterNumber = newNumber;
     }
+
     public void setCastleComplete(boolean status) {
         this.castleComplete = status;
     }
@@ -58,6 +68,7 @@ public class Castle {
                 case "FIGHT":
                     System.out.println("Time for some action!");
                     controlEncounter(theChar);
+                    controlEncounter();
                     if (playerDead) {
                         System.out.println("A pity that you are not a good soldier");
                         castleEndsession = true;
@@ -94,19 +105,14 @@ public class Castle {
         int turnCount = 0;
         int encounterNumber = getEncounterNumber();
         boolean hitCheck = false;
-
+        Character characterStats = new Character();
         Encounters encounter = new Encounters();
         encounter.setCurrentEncounter(getEncounterNumber());
 
         do {
-            //System.out.println("checkin: " + turnChecker);
             switch (turnChecker) {
                 case "Player":
                     System.out.println();
-                   // System.out.println("before attack: " + encounter.getEncounterHealthPoints());
-
-                    //System.out.println();
-                    
                     if (theChar.weapon == "") {
                         System.out.println(
                                 "You use your bare fists against " + encounter.getEncounterName());
@@ -127,9 +133,6 @@ public class Castle {
                         System.out.println("You totally missed. Be better.");
                     }
                     System.out.println();
-
-                    //System.out.println("after attack: " + encounter.getEncounterHealthPoints());
-
                     System.out.println();
                     turnChecker = "Monster";
                     turnCount++;
@@ -143,17 +146,6 @@ public class Castle {
                     System.out.println("Press enter to continue the fight.");
                     userInputCastle = castleScnr.nextLine();
                     break;
-                /*
-                 * if (encounter.getEncounterHealthPoints() <= 0) {
-                 * System.out.println("You took care of that pest... on to the next one!");
-                 * encounterNumber++;
-                 * monsterDead = true;
-                 * break;
-                 * }
-                 * turnChecker = "Monster";
-                 * turnCount++;
-                 * break;
-                 */
 
                 case "Monster":
                     System.out.println(encounter.getEncounterName() + " takes a swing at you");

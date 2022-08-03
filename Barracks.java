@@ -1,3 +1,11 @@
+/*
+Project: Text Game - Barracks Class
+Name: Marta Osuna-Gallardo
+Email: mosunaga@bruinmail.slcc.edu
+Description: Barracks Story Class
+Course: CSIS-1400
+*/
+
 import java.util.Scanner;
 
 public class Barracks {

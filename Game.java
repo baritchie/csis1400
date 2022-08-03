@@ -21,7 +21,6 @@ public class Game {
         String[] classes = new String[] { "Archer", "Fighter", "Mage" };
         String chosenClass;
 
-
         // GAME START
 
         System.out.println("Welcome to Castle Rush! Please enter the your name:");
