@@ -68,7 +68,6 @@ public class Castle {
                 case "FIGHT":
                     System.out.println("Time for some action!");
                     controlEncounter(theChar);
-                    controlEncounter();
                     if (playerDead) {
                         System.out.println("A pity that you are not a good soldier");
                         castleEndsession = true;
